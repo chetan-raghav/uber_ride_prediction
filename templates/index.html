@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Uber Ride Prediction</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Uber Weekely Rides Prediction</h1>
+        <form action="{{url_for('predict')}}" method="POST">
+            <input type="text" name="priceperweek" placeholder="Enter priceperweek" required="required">
+            <input type="text" name="population" placeholder="Enter population" required="required">
+            <input type="text" name="monthlyincome" placeholder="Enter monthlyincome" required="required">
+            <input type="text" name="avgparkingpermonth" placeholder="Enter average parking per month" required="required">
+            <button type="submit" class="btn btn-primary btn-large">Predict</button>
+        </form>     
+        <br><br>
+        {{prediction_text}}  
+    </body>
+
+</html>
